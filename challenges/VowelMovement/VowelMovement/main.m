@@ -21,9 +21,10 @@ int main(int argc, const char * argv[]) {
         NSArray *vowels = @[@"a", @"e", @"i", @"o", @"u"];
         
 //        void (^devowelizer)(id, NSUInteger, BOOL *);
-        arrayEnumerationBlock devowelizer;
-        devowelizer = ^(id string, NSUInteger i, BOOL *stop) {
-            
+        
+//        arrayEnumerationBlock devowelizer;
+//        devowelizer = ^(id string, NSUInteger i, BOOL *stop) {
+        [originalStrings enumerateObjectsUsingBlock:^(id string, NSUInteger i, BOOL *stop) {        //anonymous block
             NSRange yRange = [string rangeOfString:@"y"
                                            options:NSCaseInsensitiveSearch];
             if (yRange.location != NSNotFound) {
@@ -41,9 +42,9 @@ int main(int argc, const char * argv[]) {
             }
             
             [devowelizedStrings addObject:newString];
-        };
+        }];
         
-        [originalStrings enumerateObjectsUsingBlock:devowelizer];
+//        [originalStrings enumerateObjectsUsingBlock:devowelizer];
         NSLog(@"devowelized string:%@", devowelizedStrings);
     }
     return 0;
