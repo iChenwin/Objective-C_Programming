@@ -39,27 +39,40 @@ int main(int argc, const char * argv[]) {
             
             [employees addObject:mikey];
         }
+        
         NSMutableArray *allassets = [[NSMutableArray alloc] init];
         for (int i = 0; i < 10; i++) {
             BNRAsset *asset = [[BNRAsset alloc] init];
             NSString *currentLabel = [NSString stringWithFormat:@"Laptop %d", i];
             asset.label = currentLabel;
             asset.resaleValue = 350 + i * 17;
-            
             NSUInteger randomIndex = random() % [employees count];
             BNREmployee *randomEmployee = [employees objectAtIndex:randomIndex];
             [randomEmployee addAsset:asset];
             [allassets addObject:asset];
         }
         
+        //sorting array
+        NSSortDescriptor *voa = [NSSortDescriptor sortDescriptorWithKey:@"valueOfAssets" ascending:YES];
+        NSSortDescriptor *eid = [NSSortDescriptor sortDescriptorWithKey:@"employeeID" ascending:YES];
+        [employees sortUsingDescriptors:@[voa, eid]];
+        
         NSLog(@"Employees: %@", employees);
         NSLog(@"Giving up ownership of one employee");
         [employees removeObjectAtIndex:5];
         NSLog(@"allassets:%@", allassets);
+        
 //        NSLog(@"remove a asset");
 //        BNRAsset *asset = ((BNREmployee *)employees[1]).assets[0];
 //        [employees[1] removeAsset:asset];
 //        NSLog(@"Employees: %@", employees);
+        
+        //filter array
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"holder.valueOfAssets > 400"];
+        NSArray *toBeReclaimed = [allassets filteredArrayUsingPredicate:predicate];
+        NSLog(@"toBeReclaimed:%@", toBeReclaimed);
+        toBeReclaimed = nil;
+        
         NSLog(@"Giving up ownership of arrays");
         allassets = nil;
         employees = nil;

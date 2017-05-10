@@ -15,4 +15,5 @@
 @property (nonatomic) float   totalValue;
 
 - (void)addHolding:(BNRStockHolding *)h;
+- (NSArray *)mostValuableHolding;
 @end

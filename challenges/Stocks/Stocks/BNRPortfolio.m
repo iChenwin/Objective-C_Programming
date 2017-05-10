@@ -32,4 +32,13 @@
     
     return sum;
 }
+- (NSArray *)mostValuableHolding {
+    NSSortDescriptor *vid = [NSSortDescriptor sortDescriptorWithKey:@"valueInDollars" ascending:NO];
+    [_holdings sortUsingDescriptors:@[vid]];
+    
+    return [_holdings subarrayWithRange:NSMakeRange(0, 3)];;
+}
+- (NSString *)description {
+    return [NSString stringWithFormat:@"portfolio with holdings:%@", self.holdings];
+}
 @end

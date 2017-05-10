@@ -16,4 +16,8 @@
 - (float)valueInDollars {
     return _numberOfShares * _currentSharePrice;
 }
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<holding:%@ value:%.1f>", self.stockName, [self valueInDollars]];
+}
 @end
