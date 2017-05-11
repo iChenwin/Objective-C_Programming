@@ -18,8 +18,8 @@ int main(int argc, const char * argv[]) {
 //                                                 selector:@selector(zoneChange:)
 //                                                     name:NSSystemTimeZoneDidChangeNotification
 //                                                   object:nil];
-        
-        //notification using block
+
+                //notification using block
         [[NSNotificationCenter defaultCenter] addObserverForName:NSSystemTimeZoneDidChangeNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
             NSLog(@"system time zone has been changed");
         }];
