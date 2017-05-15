@@ -10,19 +10,11 @@
 #import <MediaPlayer/MPVolumeView.h>
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (strong, nonatomic) MPVolumeView *volumeView;
 @property (strong, nonatomic) UISlider *volumeViewSlider;
 @end
 
 @implementation ViewController
-- (IBAction)adjustVolume:(id)sender {
-    // change system volume, the value is between 0.0f and 1.0f
-    [self.volumeViewSlider setValue:[self.slider value] animated:NO];
-    
-    // send UI control event to make the change effect right now.
-    [self.volumeViewSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
-}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -40,6 +32,11 @@
     
     [self.volumeView setFrame:CGRectMake(16, 100, [UIScreen mainScreen].bounds.size.width - 32, 20)];
     [self.view addSubview:self.volumeView];
+    
+//    [self.volumeViewSlider setValue:[self.slider value] animated:NO];
+//
+//    // send UI control event to make the change effect right now.
+//    [self.volumeViewSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidLoad {
