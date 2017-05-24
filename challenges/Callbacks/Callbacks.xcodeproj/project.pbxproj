@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B03186491EC2AE6E00FB42A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B03186481EC2AE6E00FB42A6 /* main.m */; };
 		B03186511EC2AFE400FB42A6 /* BNRLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = B03186501EC2AFE400FB42A6 /* BNRLogger.m */; };
+		B04A01801ED511E5002DC662 /* BNRObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B04A017F1ED511E5002DC662 /* BNRObserver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		B03186481EC2AE6E00FB42A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B031864F1EC2AFE400FB42A6 /* BNRLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRLogger.h; sourceTree = "<group>"; };
 		B03186501EC2AFE400FB42A6 /* BNRLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRLogger.m; sourceTree = "<group>"; };
+		B04A017E1ED511E5002DC662 /* BNRObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRObserver.h; sourceTree = "<group>"; };
+		B04A017F1ED511E5002DC662 /* BNRObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRObserver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				B03186481EC2AE6E00FB42A6 /* main.m */,
+				B04A017E1ED511E5002DC662 /* BNRObserver.h */,
+				B04A017F1ED511E5002DC662 /* BNRObserver.m */,
 				B031864F1EC2AFE400FB42A6 /* BNRLogger.h */,
 				B03186501EC2AFE400FB42A6 /* BNRLogger.m */,
 			);
@@ -125,6 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B04A01801ED511E5002DC662 /* BNRObserver.m in Sources */,
 				B03186511EC2AFE400FB42A6 /* BNRLogger.m in Sources */,
 				B03186491EC2AE6E00FB42A6 /* main.m in Sources */,
 			);
@@ -257,6 +263,7 @@
 				B031864E1EC2AE6E00FB42A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
