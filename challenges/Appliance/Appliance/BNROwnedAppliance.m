@@ -10,7 +10,7 @@
 
 @interface BNROwnedAppliance ()
 {
-    NSMutableSet *_owerNames;
+    NSMutableSet *_ownerNames;
 }
 @end
 
@@ -24,10 +24,10 @@
                      firstOwnerName:(NSString *)n
 {
     if (self = [self initWithProductName:pn]) {
-        _owerNames = [[NSMutableSet alloc] init];
+        _ownerNames = [[NSMutableSet alloc] init];
         
         if (n) {
-            [_owerNames addObject:n];
+            [_ownerNames addObject:n];
         }
         
     }
@@ -36,14 +36,14 @@
 }
 
 - (void)addOwnerName:(NSString *)n {
-    [_owerNames addObject:n];
+    [_ownerNames addObject:n];
 }
 
 - (void)removeOwnerName:(NSString *)n {
-    [_owerNames removeObject:n];
+    [_ownerNames removeObject:n];
 }
 
 - (NSSet *)ownerNames {
-    return [_owerNames copy];
+    return [_ownerNames copy];
 }
 @end

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <MediaPlayer/MPVolumeView.h>
+#import "SVProgressHUD/SVProgressHUD.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) MPVolumeView *volumeView;
@@ -37,6 +38,11 @@
 //
 //    // send UI control event to make the change effect right now.
 //    [self.volumeViewSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
+- (IBAction)doneAction:(id)sender {
+    [SVProgressHUD showInfoWithStatus:@"Done!"];
+    [SVProgressHUD dismissWithDelay:2.0f];
 }
 
 - (void)viewDidLoad {
